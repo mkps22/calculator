@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+          background-color: rgb(228, 69, 122);
+          
+        }
+       
+        .con{
+            width: 30%;
+            height: 70vh;
+            background-color: rgb(67, 68, 67);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 8px;
+            margin: auto;
+            outline: 0px;
+            margin-top: 2%;
+            border-radius: 1ic;
+            border: 5px groove black;
+
+           
+            
+
+        }
+        #t1{
+            grid-column: 1/5;
+           outline: 0px;
+           text-align: end;
+           font-size: 25px;
+           border-radius: 1ic;
+           background-color: black;
+           border: 1px solid rgb(67, 68, 67);
+          }
+        button{
+           border-radius: 1ic;
+           box-shadow: 0px 0px 5px 3px rgb(204, 203, 203);
+           font-size: 18PX;
+           border: 3px groove gray;
+        }
+        INPUT{
+            padding-right: 2%;
+        }
+        button:hover{
+            background-color: rgb(253, 206, 214);}
+       #main{
+       display: flex;
+        margin: auto;
+       width: 30%;
+       height: 10vh;
+      background-color: transparent;
+      justify-content: space-evenly;
+      align-items: center;
+      
+       margin-left: 35%;
+       }
+       #main button{
+        height: 50%;
+        width: 17%;
+       }
+       #off{
+        background-color:red;
+       }
+       #t1::placeholder{
+        color: black;
+       }
+       h1{
+        text-align: center;
+        word-spacing: 4px;
+        opacity: 1;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+       #hh button{
+        height: 10vh;
+        width: 5%;
+        box-shadow: 0px 0px 15px 10px rgb(27, 199, 59);
+       }
+       #huh{
+        opacity: 0;
+        margin-top: -6%;
+        text-align: center;
+        text-align: center;
+        word-spacing: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+       }
+       #huh button{
+        height: 10vh;
+        width: 5%;
+        box-shadow: 0px 0px 20px 7px rgb(194, 38, 38);
+        
+
+       }
+      
+       
+        
+    </style>
+</head>
+<body>
+    <h1 id="hh">Currently calculator is off...click <button>ON</button> button to do your task</h1>
+    <h2 id="huh">If your task completed click  <button>OFF</button>  button .</h2>
+    <div class="con">
+        <input type="text" id="t1" placeholder="0">
+        <button onclick="clr()">AC</button>
+        <button onclick="bk()">C</button>
+        <button onclick="fun('%')">%</button>
+        <button onclick="fun('/')">/</button>
+        <button onclick="fun('1')">1</button>
+        <button onclick="fun('2')">2</button>
+        <button onclick="fun('3')">3</button>
+        <button onclick="fun('*')">*</button>
+        <button onclick="fun('4')">4</button>
+        <button onclick="fun('5')">5</button>
+        <button onclick="fun('6')">6</button>
+        <button onclick="fun('-')">-</button>
+        <button onclick="fun('7')">7</button>
+        <button onclick="fun('8')">8</button>
+        <button onclick="fun('9')">9</button>
+        <button onclick="fun('+')">+</button>
+        <button onclick="fun('0')">0</button>
+        <button onclick="fun('.')">.</button>
+        <button onclick="fun('00')">00</button>
+        <button id="sss" onclick="cal()">=</button>
+      </div>
+  <div id="main"> 
+    <button id="on">ON</button>
+  <button id="off">OFF</button</div>
+</div>
+
+
+        <script>
+            let rs=""
+            function fun(s)
+            {
+                rs=rs+s
+                document.getElementById("t1").value=rs
+            }
+            function cal()
+            {
+                document.getElementById("t1").value=eval(rs)
+               
+            }
+            function clr(){
+                document.getElementById("t1").value=""
+                rs=""
+
+            }
+            function bk(){
+                rs=rs.slice(0,rs.length-1)
+                document.getElementById("t1").value=rs
+            }
+
+            let inp=document.querySelector("#t1")
+            
+            let of=document.querySelector("#off")
+            let da=0
+            of.addEventListener("click",function(){
+               
+                    inp.style.backgroundColor="black"
+                    inp.style.boxShadow="0px 0px 5px 3px rgb(194, 38, 38)"
+                    of.style.backgroundColor="red"
+                    hh.style.opacity="1"
+                    huh.style.opacity="0"
+                    document.getElementById("t1").value=""
+                rs=""
+                    on.style.backgroundColor="white"
+                    
+                
+                })
+                
+                let on=document.querySelector("#on")
+                let inpp=document.querySelector("#t1")
+                let oof=document.querySelector("#off")
+                let hh=document.querySelector("#hh")
+                let huh=document.querySelector("#huh")
+            on.addEventListener("click",function(){
+              
+                    inpp.style.backgroundColor="white"
+                    on.style.backgroundColor="green"
+                    oof.style.backgroundColor="white"
+                    inpp.style.boxShadow= "0px 0px 3px 3px rgb(27, 199, 59)";
+                    sd=1
+                    hh.style.opacity="0"
+                    huh.style.opacity="1"
+                    document.getElementById("t1").value=""
+                rs=""
+
+
+                })
+            
+            
+            </script>
+        
+</body>
+</html>
